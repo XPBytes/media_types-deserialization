@@ -68,6 +68,7 @@ module MediaTypes
 
     def request_content_type_symbol
       content_type = request_content_type
+      return nil unless content_type
       result = lookup_content_type_symbol.respond_to?(:call) ?
         instance_exec(content_type, &lookup_content_type_symbol) :
         lookup_content_type_via_mime_type(content_type)

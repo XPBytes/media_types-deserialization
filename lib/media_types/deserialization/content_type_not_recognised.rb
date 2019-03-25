@@ -4,7 +4,6 @@ module MediaTypes
   module Deserialization
     class ContentTypeNotRecognised < Error
       def initialize(content_type)
-        set_backtrace(source.backtrace)
         super format(
           'The Content-Type: %<content_type>s is not recognised or supported',
           content_type: content_type

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    media_types-deserialization (0.1.1)
+    media_types-deserialization (0.1.2)
       activesupport (>= 4.0.0)
       http_headers-content_type (>= 0.1.1, < 1.0.0)
       media_types (>= 0.6.0)
