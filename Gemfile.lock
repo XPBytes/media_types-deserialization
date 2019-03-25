@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    media_types-deserialization (0.1.0)
+    media_types-deserialization (0.1.1)
       activesupport (>= 4.0.0)
       http_headers-content_type (>= 0.1.1, < 1.0.0)
       media_types (>= 0.6.0)
@@ -39,7 +39,7 @@ GEM
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    media_types (0.6.0)
+    media_types (0.6.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     nokogiri (1.10.1)

@@ -72,7 +72,7 @@ module MediaTypes
         instance_exec(content_type, &lookup_content_type_symbol) :
         lookup_content_type_via_mime_type(content_type)
 
-      raise ContentTypeNotRecognised(content_type) unless result
+      raise ContentTypeNotRecognised, content_type unless result
       return result if result.is_a?(Symbol)
       (result.respond_to?(:symbol) && result.symbol) || result.to_sym || DEFAULT_LOOKUP_TABLE[result.to_s]
     end
@@ -90,8 +90,9 @@ module MediaTypes
 
       next_symbol = symbol
 
-      if lookup_media_type_by_symbol.respond_to?(:call)
-        next_symbol = instance_exec(symbol, &lookup_media_type_by_symbol)&.suffix&.to_sym
+      if lookup_media_type_by_symbol.respond_to?(:call) && symbol != :json
+        media_type = instance_exec(symbol, &lookup_media_type_by_symbol)
+        next_symbol = media_type.respond_to?(:symbol) && media_type.symbol || media_type&.suffix
         return deserializer_for_content_type(next_symbol) if next_symbol != symbol && next_symbol
       end
 
