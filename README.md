@@ -30,7 +30,7 @@ very similarly as `params` in `Rack` (and therefore `Rails`) applications, but o
 explicit deserializer gives back.
 
 ```ruby
-require 'media_type/deserialization'
+require 'media_types/deserialization'
 
 class BaseController
   include MediaTypes::Deserialization
