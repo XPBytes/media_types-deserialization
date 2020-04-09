@@ -7,6 +7,11 @@
 Add media types supported deserialization using your favourite deserializer, and (when supported and provided) media 
 type validation.
 
+
+## Deprecated since `media-types-serialization@1.0.0`
+
+This library will nog longer receive updates because it has been completely obsoleted by changes in the `media-types-serialization`. That library now takes care of both input and output.
+
 ## Installation
 
 Add this line to your application's Gemfile:
